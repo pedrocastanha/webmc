@@ -27,7 +27,7 @@ export function Features() {
     {
       icon: Award,
       title: 'Qualidade Reconhecida',
-      description: 'Mais de 10 anos no mercado com excelência em produtos e serviços.'
+      description: 'Mais de 20 anos no mercado com excelência em produtos e serviços.'
     },
     {
       icon: Zap,

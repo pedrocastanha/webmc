@@ -29,7 +29,7 @@ export function Welcome() {
           <div className="order-1 lg:order-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Nossa Corretora</h3>
             <p className="text-gray-600 mb-8">
-              Com mais de uma década de experiência no mercado de seguros, a M & C Seguros se destaca pelos valores que norteiam nosso trabalho e relacionamento com os clientes.
+              Com mais de duas décadas de experiência no mercado de seguros, a M&C Seguros se destaca pela excelência no atendimento e pelos valores que orientam cada etapa do nosso trabalho. Ética, transparência e compromisso com o cliente são os pilares que sustentam nossa trajetória de confiança e credibilidade.
             </p>
             
             <div className="grid grid-cols-2 gap-4">
