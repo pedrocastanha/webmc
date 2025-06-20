@@ -38,7 +38,7 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 animate-fade-in-up px-4 sm:px-0">
             <button 
-              className="gradient-primary text-white hover:opacity-90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-md transition-all duration-200 flex items-center justify-center"
+              className="cursor-pointer gradient-primary text-white hover:opacity-90 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-md transition-all duration-200 flex items-center justify-center"
               onClick={() => scrollToSection('formulario')}
             >
               Solicitar Cotação
@@ -46,7 +46,7 @@ export function Hero() {
             </button>
             
             <button 
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-md transition-all duration-200"
+              className="cursor-pointer border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto rounded-md transition-all duration-200"
               onClick={() => scrollToSection('produtos')}
             >
               Nossos Produtos

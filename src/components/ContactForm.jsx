@@ -210,7 +210,7 @@ export function ContactForm({ className = '' }) {
               <button 
                 type="submit" 
                 disabled={formStatus.loading}
-                className="w-full gradient-primary text-white py-3 px-6 rounded-md hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
+                className="cursor-pointer w-full gradient-primary text-white py-3 px-6 rounded-md hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center"
               >
                 {formStatus.loading ? (
                   'Enviando...'

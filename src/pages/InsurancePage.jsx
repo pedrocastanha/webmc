@@ -269,7 +269,7 @@ export function InsurancePage({ type }) {
 
                 <Button 
                   onClick={scrollToForm}
-                  className="gradient-primary text-white hover:opacity-90 px-8 py-3"
+                  className="cursor-pointer gradient-primary text-white hover:opacity-90 px-8 py-3"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Solicitar Cotação
@@ -316,7 +316,7 @@ export function InsurancePage({ type }) {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   onClick={scrollToForm}
-                  className="gradient-primary text-white hover:opacity-90 px-8 py-3"
+                  className="gradient-primary text-white hover:opacity-90 px-8 py-3 cursor-pointer"
                 >
                   Solicitar Cotação Gratuita
                 </Button>
