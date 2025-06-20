@@ -32,7 +32,7 @@ export function Hero() {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-200 leading-relaxed animate-fade-in-up px-4 sm:px-0">
-            Há mais de 10 anos oferecendo as melhores soluções em seguros com 
+            Há mais de 20 anos oferecendo as melhores soluções em seguros com 
             atendimento personalizado e cobertura completa.
           </p>
 

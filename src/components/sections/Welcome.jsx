@@ -17,10 +17,10 @@ export function Welcome() {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 px-4 sm:px-0">
             Bem-vindos à{' '}
-            <span className="text-gradient">M&C Seguros</span>
+            <span className="text-gradient">M & C Seguros</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Nossa corretora está localizada no coração da cidade, oferecendo atendimento personalizado e soluções em seguros há mais de 10 anos.
+            Nossa corretora está localizada no coração da cidade, oferecendo atendimento personalizado e soluções em seguros há mais de 20 anos.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export function Welcome() {
           <div className="order-1 lg:order-1 flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Nossa Corretora</h3>
             <p className="text-gray-600 mb-8">
-              Com mais de uma década de experiência no mercado de seguros, a M&C Seguros se destaca pelos valores que norteiam nosso trabalho e relacionamento com os clientes.
+              Com mais de uma década de experiência no mercado de seguros, a M & C Seguros se destaca pelos valores que norteiam nosso trabalho e relacionamento com os clientes.
             </p>
             
             <div className="grid grid-cols-2 gap-4">

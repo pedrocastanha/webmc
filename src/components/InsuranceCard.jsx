@@ -43,7 +43,7 @@ export function InsuranceCard({
           className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
         >
           Saiba mais
-          <ArrowRight className="ml-2 w-4 h-4" />
+          <ArrowRight className="ml-2 w-4 h-4 cursor-pointer" />
         </Link>
       </div>
     </div>

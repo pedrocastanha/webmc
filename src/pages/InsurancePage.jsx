@@ -231,7 +231,7 @@ export function InsurancePage({ type }) {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative h-96 flex items-center justify-center"
+        className="relative h-96 flex items-center justify-center border"
         style={{
           backgroundImage: `url('${data.banner}')`,
           backgroundSize: 'cover',
@@ -266,25 +266,18 @@ export function InsurancePage({ type }) {
                     </div>
                   ))}
                 </div>
-
-                <Button 
-                  onClick={scrollToForm}
-                  className="cursor-pointer gradient-primary text-white hover:opacity-90 px-8 py-3"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Solicitar Cotação
-                </Button>
               </div>
-
-              <div className="text-center">
-                <img 
-                  src={data.icon} 
-                  alt={data.title}
-                  className="max-w-full h-auto mx-auto"
-                />
-              </div>
+            <div 
+              className="text-center border inline-block"
+              style={{ borderColor: '#e0e0e0' }}
+            >
+              <img 
+                src={data.icon} 
+                alt={data.title}
+                className="max-w-full h-auto mx-auto"
+              />
             </div>
-
+          </div>
             {/* Features Grid */}
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
@@ -323,10 +316,10 @@ export function InsurancePage({ type }) {
                 
                 <Button 
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3"
-                  onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+                  className="cursor-pointer text-primary hover:bg-primary hover:text-white px-8 py-3 bg-green-500 hover:bg-green-600 text-white"
+                  onClick={() => window.open('https://wa.me/5544997036832?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20seguro.', '_blank')}
                 >
-                  Falar no WhatsApp
+                  Chamar no WhatsApp
                 </Button>
               </div>
             </div>

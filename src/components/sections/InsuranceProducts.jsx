@@ -46,7 +46,7 @@ export function InsuranceProducts() {
     },
     {
       title: 'Seguro de Vida Coletiva',
-      // description: 'Garanta o futuro da sua família com nossa cobertura de vida individual.',
+      description: 'Proteção para grupos e empresas, oferecendo segurança e benefícios para todos os colaboradores.',
       image: '/src/assets/images/Banners/VidaColetiva.jpeg',
       features: [
         'Morte natural e acidental',
@@ -54,7 +54,7 @@ export function InsuranceProducts() {
         'Doenças graves',
         'Assistência funeral'
       ],
-      // href: '/seguro-vida-individual'
+      href: '/seguro-vida-grupo'
     },
     {
       title: 'Seguro Empresarial',
@@ -218,7 +218,7 @@ export function InsuranceProducts() {
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
               <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mr-2" />
-              <span className="text-2xl sm:text-3xl font-bold">10+</span>
+              <span className="text-2xl sm:text-3xl font-bold">20+</span>
             </div>
             <p className="text-gray-600 text-sm sm:text-base">Anos de Experiência</p>
           </div>
@@ -226,7 +226,7 @@ export function InsuranceProducts() {
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
               <Users className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mr-2" />
-              <span className="text-2xl sm:text-3xl font-bold">5000+</span>
+              <span className="text-2xl sm:text-3xl font-bold">1500+</span>
             </div>
             <p className="text-gray-600 text-sm sm:text-base">Clientes Satisfeitos</p>
           </div>
@@ -234,7 +234,7 @@ export function InsuranceProducts() {
           <div className="text-center">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
               <Award className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mr-2" />
-              <span className="text-2xl sm:text-3xl font-bold">15+</span>
+              <span className="text-2xl sm:text-3xl font-bold">10+</span>
             </div>
             <p className="text-gray-600 text-sm sm:text-base">Seguradoras Parceiras</p>
           </div>
