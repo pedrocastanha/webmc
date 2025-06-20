@@ -119,37 +119,34 @@ export function InsuranceProducts() {
   ];
 
   const itemsPerPage = 4;
-  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const totalItems = products.length;
 
   useEffect(() => {
     if (isAutoPlaying) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === totalPages - 1 ? 0 : prevIndex + 1
-        );
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
       }, 5000);
 
       return () => clearInterval(interval);
     }
-  }, [isAutoPlaying, totalPages]);
+  }, [isAutoPlaying, totalItems]);
 
   const nextSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex === totalPages - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
   const prevSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? totalPages - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
 
-  const getCurrentProducts = () => {
-    const startIndex = currentIndex * itemsPerPage;
-    return products.slice(startIndex, startIndex + itemsPerPage);
+  const getVisibleProducts = () => {
+    const visibleProducts = [];
+    for (let i = 0; i < itemsPerPage; i++) {
+      visibleProducts.push(products[(currentIndex + i) % totalItems]);
+    }
+    return visibleProducts;
   };
 
   return (
@@ -169,7 +166,7 @@ export function InsuranceProducts() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors cursor-pointer"
             aria-label="Produto anterior"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600" />
@@ -177,7 +174,7 @@ export function InsuranceProducts() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors cursor-pointer"
             aria-label="Próximo produto"
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />
@@ -185,7 +182,7 @@ export function InsuranceProducts() {
 
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 transition-all duration-500">
-            {getCurrentProducts().map((product, index) => (
+            {getVisibleProducts().map((product, index) => (
               <InsuranceCard
                 key={`${currentIndex}-${index}`}
                 {...product}
@@ -197,7 +194,7 @@ export function InsuranceProducts() {
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalPages }).map((_, index) => (
+            {products.map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
@@ -207,7 +204,7 @@ export function InsuranceProducts() {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
                 }`}
-                aria-label={`Ir para página ${index + 1}`}
+                aria-label={`Ir para produto ${index + 1}`}
               />
             ))}
           </div>
@@ -243,4 +240,5 @@ export function InsuranceProducts() {
     </section>
   );
 }
+
 

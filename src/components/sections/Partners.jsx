@@ -22,38 +22,35 @@ export function Partners() {
     { name: 'Mitsui', logo: '/src/assets/images/Logos/logo_Mitsui.png' }
   ];
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(partners.length / itemsPerPage);
+  const itemsPerPage = 4;
+  const totalItems = partners.length;
 
   useEffect(() => {
     if (isAutoPlaying) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === totalPages - 1 ? 0 : prevIndex + 1
-        );
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
       }, 4000);
 
       return () => clearInterval(interval);
     }
-  }, [isAutoPlaying, totalPages]);
+  }, [isAutoPlaying, totalItems]);
 
   const nextSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex === totalPages - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
   const prevSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? totalPages - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
 
-  const getCurrentPartners = () => {
-    const startIndex = currentIndex * itemsPerPage;
-    return partners.slice(startIndex, startIndex + itemsPerPage);
+  const getVisiblePartners = () => {
+    const visiblePartners = [];
+    for (let i = 0; i < itemsPerPage; i++) {
+      visiblePartners.push(partners[(currentIndex + i) % totalItems]);
+    }
+    return visiblePartners;
   };
 
   return (
@@ -74,7 +71,7 @@ export function Partners() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors cursor-pointer"
             aria-label="Seguradora anterior"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600" />
@@ -82,15 +79,15 @@ export function Partners() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors cursor-pointer"
             aria-label="Próxima seguradora"
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />
           </button>
 
           {/* Partners Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center transition-all duration-500">
-            {getCurrentPartners().map((partner, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center transition-all duration-500">
+            {getVisiblePartners().map((partner, index) => (
               <div
                 key={`${currentIndex}-${index}`}
                 className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 bg-white rounded-lg shadow-sm hover:shadow-md border border-gray-100"
@@ -106,7 +103,7 @@ export function Partners() {
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalPages }).map((_, index) => (
+            {partners.map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
@@ -116,7 +113,7 @@ export function Partners() {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
                 }`}
-                aria-label={`Ir para página ${index + 1}`}
+                aria-label={`Ir para seguradora ${index + 1}`}
               />
             ))}
           </div>
@@ -131,4 +128,5 @@ export function Partners() {
     </section>
   );
 }
+
 
