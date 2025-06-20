@@ -29,7 +29,7 @@ export function Partners() {
     if (isAutoPlaying) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
-      }, 4000);
+      }, 2000); 
 
       return () => clearInterval(interval);
     }
