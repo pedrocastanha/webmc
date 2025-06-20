@@ -30,7 +30,7 @@ export function Footer() {
               className="h-6 sm:h-8 w-auto filter brightness-0 invert mx-auto sm:mx-0"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
-              Protegendo o que mais importa para você há mais de 10 anos. 
+              Protegendo o que mais importa para você há mais de 20 anos. 
               Soluções completas em seguros com atendimento personalizado.
             </p>
           </div>

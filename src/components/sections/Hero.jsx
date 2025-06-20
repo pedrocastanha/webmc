@@ -18,7 +18,7 @@ export function Hero() {
           backgroundImage: `url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/90" />
       </div>
 
       {/* Content */}
@@ -26,9 +26,11 @@ export function Hero() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in-up leading-tight">
             Proteção Completa para{' '}
-            <span className="text-gradient bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block sm:inline">
+            <span
+              className="text-gradient bg-gradient-to-r from-blue-800 to-purple-800 bg-clip-text text-transparent font-bold"
+            >
               Você e sua Família
-            </span>
+          </span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-200 leading-relaxed animate-fade-in-up px-4 sm:px-0">
